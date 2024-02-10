@@ -1,0 +1,9 @@
+  - name: linuxWordpress
+    vmid: 210
+    node: pve1
+    image_file: debian-12-generic-amd64.qcow2
+    cores: 2
+    memory: 2048
+    vlan: 1
+    ipv4mode: dhcp
+    state: new

@@ -1,0 +1,10 @@
+ansible_key_file: /home/ansible/.ssh/abdul.pub
+project_path: '/home/abdul/projects/Linux-Hosted-Wordpress/'
+image_path: '/var/lib/vz/images/0/'
+domain_name: '.chudihome.com'
+timezone: 'America/Chicago'
+locale: 'en_US.UTF-8'
+group_name: pvenodes
+variable_files:
+ - images
+ - vms
