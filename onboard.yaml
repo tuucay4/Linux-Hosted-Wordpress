@@ -1,0 +1,13 @@
+---
+
+- hosts: host
+  become: true
+  gather_facts: false 
+  
+  roles:
+    # Download cloud-init images
+    - install 
+    # Create cloud-init files
+    - create_user_files
+    # Create VMs
+    - create_vms
