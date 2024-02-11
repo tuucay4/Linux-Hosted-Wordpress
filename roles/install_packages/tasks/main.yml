@@ -1,0 +1,21 @@
+# Install Required packages
+- name: install required packages
+  apt:
+    name:
+      - mysql-server
+      - php-mysql
+      - php8.1-fpm
+      - monit
+      - ufw
+      -
+    state: latest
+    update_cache: true
+
+- name: configure firewall for nginx (80 and 443)
+  ufw:
+    rule: allow
+    port: "{{item}}"
+    proto: tcp"
+  loop:
+    - 80
+    - 443

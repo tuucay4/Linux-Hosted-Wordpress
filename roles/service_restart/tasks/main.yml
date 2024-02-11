@@ -1,0 +1,20 @@
+---
+
+- name: restart services
+  service:
+    name:
+      - nginx
+      - mysql
+      - php8.1-fpm
+      - monit
+    state: restarted
+
+- name: enable services
+  service:
+    name:
+      - nginx
+      - mysql
+      - php8.1-fpm
+      - monit
+    state: started
+    enabled: true

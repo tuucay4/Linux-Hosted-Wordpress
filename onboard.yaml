@@ -5,9 +5,11 @@
   gather_facts: false 
   
   roles:
-    # Download cloud-init images
-    - install 
-    # Create cloud-init files
-    - create_user_files
-    # Create VMs
-    - create_vms
+    # Install Required Packages
+    - install_packages 
+    # Nginx apt repository and installation
+    - nginx_installation
+    # Restarting service
+    - service_restart
+    # Copying config files
+    - configurations

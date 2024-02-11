@@ -18,7 +18,7 @@ packages:
 runcmd:
   - systemctl enable qemu-guest-agent
   - systemctl start qemu-guest-agent
-  - ufw limit proto tcp from {{ansible_ip}} to any port 22
+  - ufw allow proto tcp from {{ansible_ip}} to any port 22
   - ufw enable
   - locale-gen {{locale}}
   - localectl set-locale LANG={{locale}}
