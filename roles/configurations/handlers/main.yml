@@ -1,0 +1,9 @@
+---
+
+- name: restart php-fpm when php.ini chnage 
+  notify: restart_php
+
+- name: restart_php
+  service:
+    name: php-fpm
+    state: restarted

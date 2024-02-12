@@ -1,0 +1,9 @@
+---
+
+- name: reload nginx when fcgi cache is created
+  notify: reload_nginx
+
+- name: reload_nginx
+  service:
+    name: nginx
+    state: reload
