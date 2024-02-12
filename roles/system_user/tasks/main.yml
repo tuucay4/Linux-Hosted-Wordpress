@@ -1,0 +1,25 @@
+---
+
+- name: create system user for website
+  user:
+    name: "{{ website_user }}"
+    shell: /bin/bash
+    home: /home/"{{ website_user }}"
+    state: present
+
+- name: create website logs directory
+  file:
+    path: /home/"{{ website_user }}"/logs
+    state: directory
+    owner: "{{ website_user }}"
+    group: www-data
+
+- name: set ownership of website user directory
+  file:
+    path: /home/"{{ website_user }}"
+    recurse: yes
+    owner: "{{ website_user }}"
+    group: www-data
+    mode: 0775
+    
+    

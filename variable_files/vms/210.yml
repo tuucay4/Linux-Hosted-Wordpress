@@ -1,4 +1,4 @@
-  - name: linuxWordpress
+  - name: ngWordpress
     vmid: 210
     node: pve1
     image_file: debian-12-generic-amd64.qcow2

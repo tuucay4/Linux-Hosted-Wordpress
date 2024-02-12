@@ -1,0 +1,9 @@
+---
+
+- name: restart mysql after setup
+  notify: restart_mysql
+
+- name: restart_mysql
+  service:
+    name: mysql
+    state: restarted

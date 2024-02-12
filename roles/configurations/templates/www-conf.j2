@@ -1,6 +1,6 @@
 [default]
 security.limit_extensions = .php
-listen = /run/php/"{{hostname}}".sock
+listen = /run/php/"{{ ansible_hostname }}".sock
 listen.owner = www-data
 listen.group = www-data
 listen.mode = 0660

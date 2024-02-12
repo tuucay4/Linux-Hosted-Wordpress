@@ -5,3 +5,5 @@ snippets_storage: local
 snippets_path: '/var/lib/vz/snippets/'
 image_storage: local
 linux_bridge: vmbr0
+
+

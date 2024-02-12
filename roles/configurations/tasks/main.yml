@@ -18,7 +18,7 @@
 
 - name: copy default pool configuration
   template:
-    src: wwww.conf.j2
+    src: wwww-conf.j2
     # variable for hostname should be set
     dest: /etc/php/8.1/fpm/pool.d/www.conf
 

@@ -1,0 +1,11 @@
+---
+
+- name: mysql secure setup
+  community.mysql.mysql_secure_installation:
+    remove_anonymous_users: yes
+    remove_root_login: yes
+    remove_test_database: yes
+    password: "{{ mysql_root_password }}"
+    reload: yes
+    state: present
+  notify: restart_mysql
