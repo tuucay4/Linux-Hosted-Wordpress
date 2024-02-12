@@ -1,0 +1,23 @@
+---
+
+- name: create cache directory
+  file:
+    path: /usr/share/nginx/cache/fcgi
+    state: directory
+    mode: 0755
+    owner: www-data
+    group: www-data
+  notify: reload_nginx
+
+- name: create directory for php-fpm sockets
+  file:
+    path: /var/run/php-fpm
+    state: directory
+    mode: 0755
+
+
+  handlers:
+    - name: reload_nginx
+      service:
+        name: nginx
+        state: restarted
