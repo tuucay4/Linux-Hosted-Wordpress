@@ -22,4 +22,29 @@
     group: www-data
     mode: 0775
     
-    
+- name: create nginx vhost config file
+  template:
+    src: hostedlinux.conf.j2
+    dest: /etc/nginx/conf.d/hostedlinux.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart nginx
+
+- name: disable default nginx site
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  
+- name: create php-fpm vhost pool config file
+  template:
+    src: php-fpm-hostedlinux.conf.j2
+    dest: /etc/php/8.1/fpm/pool.d/hostedlinux.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart_php
+
+- name: disable default php pool
+  file:
+    path: /etc/php/8.1/fpm/pool.d/www.conf
